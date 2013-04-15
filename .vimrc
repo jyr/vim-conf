@@ -43,6 +43,8 @@ Bundle 'Lokaltog/powerline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'mattn/gist-vim'
 
 " vim-scripts repos
 Bundle 'L9'
