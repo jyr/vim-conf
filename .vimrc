@@ -1,18 +1,26 @@
 " Base
+syntax on
 
-set nocompatible
+set nocompatible               " be iMproved
+set number
 set tabstop=2
 set autoindent
-set number 
-set ff=unix
 
-" Theme
-call pathogen#infect()
-syntax on
+filetype off                   " required!
 filetype plugin on
-set t_Co=256
-set background=dark
-colorscheme solarized
+filetype plugin indent on      " required!
+
+
+set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+call vundle#rc()
+
+" PLUGINS 
+ 
+" Powerline
+set laststatus=2
+set encoding=utf-8
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
@@ -22,7 +30,24 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1 
 
-" Powerline
-let g:Powerline_theme="skwp"
-let g:Powerline_colorscheme="skwp"
-let g:Powerline_symbols = 'fancy'
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'mileszs/ack.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/powerline'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'scrooloose/syntastic'
+
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+
