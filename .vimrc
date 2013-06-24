@@ -4,12 +4,21 @@ syntax on
 set nocompatible               " be iMproved
 set number
 set tabstop=2
+set shiftwidth=2 
+set expandtab
+set colorcolumn=100
 set autoindent
+set backspace=indent,eol,start
+set listchars=tab:▸\ ,eol:¬
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
 
 filetype off                   " required!
 filetype plugin on
 filetype plugin indent on      " required!
 
+autocmd VimEnter * NERDTree
 
 set rtp+=~/.vim/bundle/vundle/
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
@@ -40,16 +49,23 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/powerline'
+Bundle 'zhaocai/linepower.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'mattn/gist-vim'
+Bundle 'Shougo/vimproc' 
+" read http://geckotang.tumblr.com/post/43488729808/mac-vimshell
+Bundle 'Shougo/vimshell'
 
 " vim-scripts repos
 Bundle 'L9'
-Bundle 'FuzzyFinder'
+Bundle 'unite.vim'
 
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 
+" Colors
+Bundle 'd11wtq/tomorrow-theme-vim'
+colorscheme Tomorrow-Night-Bright
